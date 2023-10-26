@@ -3,38 +3,8 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- Pragma Directives -->
-
-    <!-- <meta http-equiv="refresh" content="5" /> -->
-    <meta http-equiv="content-security-policy" content="default-src https:" />
-
-    <!-- Google SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages"
-    />
-    <meta
-      name="google-site-verification"
-      content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="
-    />
-    <meta name="robots" content="noindex,nofollow" />
-
-    <!-- Facebook SEO Meta Tags Sample -->
-
-    <meta property="og:url" content="index.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="When Great Minds Don’t Think Alike" />
-    <meta property="og:description" content="My Recipe" />
-
-    <!-- PWA Tags -->
-
-    <link rel="manifest" href="manifest.json" />
-
-    <!-- Custom Tags -->
-    <!-- <meta name="description" content="This is a sample recipe website"> -->
-
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>My Recipes</title>
+    <title>Ben Dover</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   </head>
   <body>
     <header>
@@ -49,7 +19,16 @@
     </header>
     <main>
 
-      <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+      <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;"></canvas>
+
+      <script>
+        var canvas = document.querySelector('myCanvas')
+        var ctx = canvas.getContext('2d')
+        
+        ctx.fillRect(25, 25, 100, 100)
+        ctx.clearRect(45, 45, 60, 60)
+        ctx.strokeRect(50, 50, 50, 50)
+        </script>
 
       <span lang="ja">こんにちは、世界</span>
 
