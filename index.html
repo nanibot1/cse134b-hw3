@@ -16,18 +16,8 @@
   <body>
     <header>
       <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#aboutme">About Me</a></li>
-          <li><a href="#resume">Résumé</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#extracurriculars">Extracurriculars</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      <pre>of Ben Dover</pre>
 
-    <main>
       <canvas id="canvas" width="150" height="150"></canvas>
 
       <script type="application/javascript">
@@ -43,16 +33,39 @@
         }
         draw();
       </script>
+      
+      <nav>
+        <ul>
+          <li><a href="#aboutme">About Me</a></li>
+          <li><a href="#resume">Résumé</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#extracurriculars">Extracurriculars</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <hr>
 
       <section id="aboutme">
         <h2>About Me</h2>
+        <svg width="100" height="100"><circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="white" /></svg>
         <article>
           <p>Ben is a UCSD undergraduate student who is currently pursuing his Bachelors of Art degree in American Politics.  
             Outside of the many rigorous classes he takes at UCSD, he likes to spend his time with his roommates and friends 
             from the clubs he is a member of.  He is working on becoming more efficient and productive whenever he is working 
             on assignments or studying for an exam.</p>
+            <h3>List of activities he likes to do</h3>
+            <ol>
+              <li>Hang out with friends and family</li>
+              <li>Play video games</li>
+              <li>Watch movies</li>
+            </ol>
         </article>
       </section>
+
+      <hr>
 
       <section id="resume">
         <h2>Résumé</h2>
@@ -64,12 +77,49 @@
         </span>
       </section>
 
+      <hr>
+
       <section id="education">
         <h2>Education</h2>
         <ul>
           <li>University of California - San Diego</li>
         </ul>
+
+        <figure>
+          <img src="images/Geisel_Library_2.jpg" alt="Geisel">
+          <figcaption>Geisel Library at UCSD</figcaption>
+        </figure>
+
+        <table>
+          <colgroup>
+            <col span="1" style="background-color:white">
+          </colgroup>
+          <caption>
+            List of Languages That I Have Learned
+          </caption>
+          <tr>
+            <th>Languages</th>
+          </tr>
+          <tr>
+            <td>Python</td>
+          </tr>
+          <tr>
+            <td>Java</td>
+          </tr>
+          <tr>
+            <td>C++</td>
+          </tr>
+          <tr>
+            <td>PHP</td>
+          </tr>
+          <tr>
+            <td>Perl</td>
+          </tr>
+        </table>
+
       </section>
+
+      <hr>
 
       <section id="extracurriculars">
         <h2>Extracurriculars</h2>
@@ -80,6 +130,7 @@
             <li>Alpha Omega</li>
             <aside><p>Alpha Omega is a diverse and thriving community of believers who strive to encourage one another daily and help each other follow Jesus, 
               while also seeking to make Him known to others around campus. Connected to a Bible-based local and international church.</p></aside>
+              <iframe src="https://sd.church/" title="Alpha Omega Home Church Webpage" height="400" width="500"></iframe>
             <li>Triton Gaming</li>
             <li>AI UCSD</li>
           </ul>
@@ -89,7 +140,7 @@
           </ul>
           <h3>Passion Projects</h3>
           <ul>
-            <li>Discord Bot for Alpha Omega</li>
+            <li><code>Python</code> Discord Bot for Alpha Omega</li>
           </ul>
         </article>
       </section>
@@ -98,24 +149,33 @@
         <h2>Contact</h2>
       </section>
 
-    <audio controls>
-      <source src="audio/rickroll.mp3" type="audio/mp3" />
-    </audio>
-    <br />
-    <video controls>
-      <source src="videos/rickroll.mp4" type="video/mp4" />
-    </video>
-    <br />
+      <hr>
+    
+      <h3><b><i>The song that I have been more recently listening to on a very frequent basis</i></b></h3>
+      <audio controls>
+        <source src="audio/rickroll.mp3" type="audio/mp3" />
+      </audio>
+      <br />
+      <video controls>
+        <source src="videos/rickroll.mp4" type="video/mp4" />
+      </video>
+      <br />
+      <template>
+        <h2>Jebaited</h2>
+        <img src="images/specialimage.jpg" width="214" height="204">
+      </template>
+      <br />
+
     <form>
       <fieldset>
-        <legend>Connect with us!</legend>
-        <label>Select your expertise:</label>
-        <input type="radio" id="beginner" name="expertise" />
-        <label for="beginner">Beginner</label>
-        <input type="radio" id="intermediate" name="expertise" />
-        <label for="intermediate">Intermediate</label>
-        <input type="radio" id="advanced" name="expertise" />
-        <label for="advanced">Advanced</label>
+        <legend>Contact Me!</legend>
+        <label>Which are you?:</label>
+        <input type="radio" id="Student" name="expertise" />
+        <label for="Student">Student</label>
+        <input type="radio" id="Recruiter" name="expertise" />
+        <label for="Recruiter">Recruiter</label>
+        <input type="radio" id="Other" name="expertise" />
+        <label for="Other">Other</label>
         <br />
         <label for="country">Select your country:</label>
         <select id="country">
@@ -127,72 +187,47 @@
           <optgroup label="Asia">
             <option value="russia">Russia</option>
             <option value="china">China</option>
+            <option value="korea">Korea</option>
+            <option value="japan">Japan</option>
           </optgroup>
         </select>
         <br />
         <label for="continent">Select your continent:</label>
         <datalist id="continents">
-          <option value="Africa"></option>
+          <option value="Asia"></option>
           <option value="North America"></option>
-          <option value="South America"></option>
         </datalist>
         <input list="continents" id="continent" />
 
         <br />
         <label for="sample-text-area">Add any comments:</label>
-        <textarea id="sample-text-area">Your comment here...</textarea>
+        <textarea id="sample-text-area" placeholder="Your comment here..."></textarea>
         <br />
         <button type="submit">Save</button>
       </fieldset>
     </form>
     <br />
     <details>
-      <summary>Hello!</summary>
-      If this is your first time here, please like and share!
+      <summary>Einstein's famous formula</summary>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+          <mi>E</mi>
+        </msup>
+        <mo>=</mo>
+        <msup>
+          <mi>m</mi>
+        </msup>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+      </math>
     </details>
     <br />
-    <table>
-      <caption>
-        Table 1: blah
-      </caption>
-      <tr>
-        <th>Ingredients</th>
-        <th>Quantity</th>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-      </tr>
-    </table>
-
-    <math xmlns="http://www.w3.org/1998/Math/MathML">
-      <msup>
-        <mi>c</mi>
-        <mn>2</mn>
-      </msup>
-      <mo>=</mo>
-      <msup>
-        <mi>a</mi>
-        <mn>2</mn>
-      </msup>
-      <mo>+</mo>
-      <msup>
-        <mi>b</mi>
-        <mn>2</mn>
-      </msup>
-    </math>
 
     <footer>
       <hr />
-      <p>Made by Ji Hong Cha</p>
+      <p><em>Made by <strong>Ji Hong Cha</strong></em></p>
     </footer>
   </body>
 </html>
