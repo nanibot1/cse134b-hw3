@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8" />
 
+    <style>
+      h1{
+        border-style: groove;
+        border-width: 5px;
+        border-color: rgb(106, 199, 230);
+      }
+      </style>
+
     <title>Ben Dover</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   </head>
@@ -11,26 +19,72 @@
       <h1>My Portfolio</h1>
       <nav>
         <ul>
-          <li><a href="#appetizers">Appetizers</a></li>
-          <li><a href="#mains">Main Dishes</a></li>
-          <li><a href="#desserts">Desserts</a></li>
+          <li><a href="#aboutme">About Me</a></li>
+          <li><a href="#resume">Résumé</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#extracurriculars">Extracurriculars</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
+      <canvas id="canvas" width="150" height="150"></canvas>
 
-      <canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;"></canvas>
+      <script type="application/javascript">
+        function draw() {
+          const canvas = document.getElementById("canvas");
+          if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = "rgba(200, 0, 0, 0.75)";
+            ctx.fillRect(10, 10, 50, 50);
+            ctx.fillStyle = "rgba(0, 0, 200, 0.75)";
+            ctx.fillRect(30, 30, 50, 50);
+          }
+        }
+        draw();
+      </script>
 
-      <script>
-        var canvas = document.querySelector('myCanvas')
-        var ctx = canvas.getContext('2d')
-        
-        ctx.fillRect(25, 25, 100, 100)
-        ctx.clearRect(45, 45, 60, 60)
-        ctx.strokeRect(50, 50, 50, 50)
-        </script>
-
-      <span lang="ja">こんにちは、世界</span>
+      <section id="aboutme">
+        <h2>About Me</h2>
+        <article>
+          
+        </article>
+      </section>
+      <section id="resume">
+        <h2>Résumé</h2>
+        <a href="Sample Resume.pdf">link</a>
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>University of California - San Diego</li>
+        </ul>
+      </section>
+      <section id="extracurriculars">
+        <h2>Extracurriculars</h2>
+        <article>
+          <h3>Student Organizations</h3>
+          <p>I am a member of the following student organizations:</p>
+          <ul>
+            <li>Alpha Omega</li>
+            <aside><p>Alpha Omega is a diverse and thriving community of believers who strive to encourage one another daily and help each other follow Jesus, 
+              while also seeking to make Him known to others around campus. Connected to a Bible-based local and international church.</p></aside>
+            <li>Triton Gaming</li>
+            <li>AI UCSD</li>
+          </ul>
+          <h3>Work/Internships</h3>
+          <ul>
+            <li>Student Assistant for HDH</li>
+          </ul>
+          <h3>Passion Projects</h3>
+          <ul>
+            <li>Discord Bot for Alpha Omega</li>
+          </ul>
+        </article>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+      </section>
 
       <section id="appetizers">
         <h2>Appetizers</h2>
@@ -206,7 +260,7 @@
 
     <footer>
       <hr />
-      <p>Made with &hearts; by CSE 134B TAs</p>
+      <p>Made by Ji Hong Cha</p>
     </footer>
   </body>
 </html>
