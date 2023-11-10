@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="printer.css" media="print" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Portfolio Page of a Person Named Ben Dover">
     <meta name="google-site-verification" content="7-X7NvLiHukCK_M3oI1nrlybEjM9d8PJRvUgnsCCYmY" />
@@ -19,22 +21,14 @@
 
       <canvas id="canvas" width="150" height="150"></canvas>
 
-      <script>
-        function draw() {
-          const canvas = document.getElementById("canvas");
-          if (canvas.getContext) {
-            const ctx = canvas.getContext("2d");
-            ctx.fillStyle = "rgba(200, 0, 0, 0.75)";
-            ctx.fillRect(10, 10, 50, 50);
-            ctx.fillStyle = "rgba(0, 0, 200, 0.75)";
-            ctx.fillRect(30, 30, 50, 50);
-          }
-        }
-        draw();
-      </script>
+      <div>
+        <caption>
+          Hover Over Me!
+        </caption>
+      </div>
       
-      <nav>
-        <ul>
+      <nav class = "topnav">
+        <ul class = "topnav_ul">
           <li><a href="#aboutme">About Me</a></li>
           <li><a href="#resume">Résumé</a></li>
           <li><a href="#education">Education</a></li>
@@ -47,7 +41,7 @@
     <main>
       <hr>
 
-      <section id="aboutme">
+      <section id="aboutme" class="container">
         <h2>About Me</h2>
         <svg width="100" height="100"><circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="white" /></svg>
         <article>
@@ -66,11 +60,11 @@
 
       <hr>
 
-      <section id="resume">
+      <section id="resume" class="container">
         <h2>Résumé</h2>
-        <div class="Resume">
+        <article class="Resume">
           <picture><img src="images/Sample_Resume.png" alt="Résumé"/></picture>
-        </div>
+        </article>
         <span>
           <a href="files/Sample_Resume.pdf" target="_blank">View Résumé as a PDF</a>
         </span>
@@ -78,7 +72,7 @@
 
       <hr>
 
-      <section id="education">
+      <section id="education" class="container">
         <h2>Education</h2>
         <ul>
           <li>University of California - San Diego</li>
@@ -120,7 +114,7 @@
 
       <hr>
 
-      <section id="extracurriculars">
+      <section id="extracurriculars" class="container">
         <h2>Extracurriculars</h2>
         <article>
           <h3>Student Organizations</h3>
@@ -146,28 +140,13 @@
         </article>
       </section>
 
-      <section id="contact">
+      <section id="contact" class="container">
         <h2>Contact</h2>
       </section>
 
       <hr>
-    
-      <h3><b><i>The song that I have been more recently listening to on a very frequent basis</i></b></h3>
-      <audio controls>
-        <source src="audio/rickroll.mp3" type="audio/mp3" />
-      </audio>
-      <br />
-      <video controls>
-        <source src="videos/rickroll.mp4" type="video/mp4" />
-      </video>
-      <br />
-      <template>
-        <h2>Jebaited</h2>
-        <img src="images/specialimage.jpg" width="214" height="204">
-      </template>
-      <br />
 
-      <form>
+      <form class="container">
         <fieldset>
           <legend>Contact Me!</legend>
           <label>Which are you?:</label>
@@ -207,26 +186,6 @@
           <button type="submit">Save</button>
         </fieldset>
       </form>
-      <br />
-      <details>
-        <summary>Einstein's famous formula</summary>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <msup>
-            <mi>E</mi>
-            <mn></mn>
-          </msup>
-          <mo>=</mo>
-          <msup>
-            <mi>m</mi>
-            <mn></mn>
-          </msup>
-          <msup>
-            <mi>c</mi>
-            <mn>2</mn>
-          </msup>
-        </math>
-      </details>
-      <br />
     </main>
 
     <footer>

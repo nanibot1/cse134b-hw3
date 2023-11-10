@@ -1,19 +1,196 @@
+/* main.css */
+@import url(vars.css);
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
 body {
-    margin: 40px;
-  }
-  
-  .wrapper {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 10px;
-    background-color: #fff;
-    color: #444;
-  }
-  
-  .box {
-    background-color: #444;
-    color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 150%;
-  }
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* CSS Reset */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@font-face {
+	font-family: "Fira Sans";
+	src: url('fonts/fira/eot/FiraSans-Regular.eot');
+	src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+		 url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+		 url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+		 url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+}
+
+body {
+	background-color : var(--background-color, white);
+	color : var(--text-color, black);
+	font-size : var(--body-size, 1.25em);
+	font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+html.no-js body {
+	background-color : var(--error-color, red);
+}
+
+#error_msg:before {
+	content : var(--error-msg, "Error");
+}
+
+h1,
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+h1:has(+ h2) {
+  margin: 0 0 0.25rem 0;
+}
+
+h1 {
+	color : var(--heading-color, #383837);
+	font-size : var(--heading-size, 2em);
+	margin-bottom: .5em;
+}
+
+h2 {
+	color : var(--subheading-color, #747674);
+	font-size : var(--subheading-size, 1.5em);
+	font-style : italic;
+	margin-top : .5em; /* tighten the sub-heading upwards */
+}
+
+p {
+	line-height : 1.5;
+	width : 100dvw;
+	text-align : justify;
+}
+
+@media (color-gamut: srgb) {
+	p {
+	  background: #78b6fd;
+	}
+}
+
+.topnav_ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #ddd;
+}
+
+.topnav a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+@media screen and (max-width: 600px) {
+	.topnav a {
+	  float: none;
+	  width: 100%;
+	}
+}
+
+.topnav a:hover {
+	background-color: #9c9c9c;
+	color: black;
+}
+
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	transition: rgb 2s;
+}
+
+div:hover {
+	animation-name: rgb;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	transform: scaleX(10)
+}
+
+@keyframes rgb {
+	0%   {background-color: red;}
+	30%  {background-color: green;}
+	80% {background-color: blue;}
+	100%   {background-color: red;}
+}
