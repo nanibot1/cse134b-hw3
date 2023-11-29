@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="main.css" media="screen" type="text/css">
-    <link rel="stylesheet" href="printer.css" media="print" type="text/css">
+    <link rel="stylesheet" href="form-no-js-main.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="form-no-js-printer.css" media="print" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Portfolio Page of a Person Named Ben Dover">
@@ -12,24 +12,6 @@
     <meta name="robots" content="noindex,nofollow"> 
     <title>Ben Dover</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
-    <style>
-      input:required-invalid {
-        border: 2px dashed red;
-      }
-
-      input:valid {
-        border: 2px solid black;
-      }
-      form {
-        margin: 3rem 0;
-      }
-
-      .dark-mode {
-        background-color: black;
-        color: white;
-      }
-    </style>
   </head>
 
   <body>
@@ -49,15 +31,6 @@
 
     <main>
       <hr>
-
-      <button onclick="myFunction()">Toggle dark mode</button>
-
-      <script>
-        function myFunction() {
-           var element = document.body;
-           element.classList.toggle("dark-mode");
-        }
-        </script>
 
       <section id="aboutme" class="container">
         <h2>About Me</h2>
@@ -168,34 +141,38 @@
       </section>
 
       <div class="container">
-        <form name="contact-form" action="https://httpbin.org/post" method="post">
+        <form action="https://httpbin.org/post" method="post">
           <input type="hidden" id="possible_bot" name="possible_bot" value="true" />
 
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your first name.." required/>
-          <output name="firstname_error"></output>
-          <output name="firstname_info"></output>
+          <input type="text" id="fname" name="firstname" placeholder="Your first name.." required />
+          <output for="error-message-if-any" name="firstname_error"></output>
+          <output for="info-message-if-any" name="firstname_error"></output>
       
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required/>
-          <output name="lastname_error"></output>
-          <output name="lastname_info"></output>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required />
+          <output for="error-message-if-any" name="lastname_error"></output>
+          <output for="info-message-if-any" name="lastname_error"></output>
 
           <label for="email">Email</label>
           <br>
-          <input type="email" id="email" name="email" placeholder="Your email.." required/>
-          <output name="email_error"></output>
-          <output name="email_info"></output>
+          <input type="email" id="email" name="email" pattern=".+@gmail\.com" placeholder="Your email.." required />
+          <output for="error-message-if-any" name="email_error"></output>
+          <output for="info-message-if-any" name="email_error"></output>
 
           <br>
           <br>
       
           <label for="comment">Comment</label>
-          <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px" required></textarea>
-          <output name="comment_error"></output>
-          <output name="comment_info"></output>
+          <br>
+          <input type="comment" id="comment" name="comment" placeholder="Write something.." maxLength="500" pattern="[a-zA-Z0-9!@#$%]*" required />
+          <output for="error-message-if-any" name="comment_error"></output>
+          <output for="info-message-if-any" name="comment_error"></output>
+
+          <br>
+          <br>
       
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit">
         </form>
       </div>
     </main>
@@ -204,7 +181,5 @@
       <hr />
       <p><em>Made by <strong>Ji Hong Cha</strong></em></p>
     </footer>
-
-    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
