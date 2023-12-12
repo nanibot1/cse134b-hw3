@@ -198,7 +198,64 @@
           <input type="submit" value="Submit" />
         </form>
       </div>
+
+      <h1>Rating Widget</h1>
+
+      <rating-widget stars="5" rating="0" bgcolor="white" nocolor="grey" color="gold">  
+        <form action="https://httpbin.org/post" method="POST">
+          <label for="rating">How satisfied are you?</label>
+          <input type="hidden" name="question" value="How satisfied are you?">
+          <input type="hidden" name="sentBy" value="HTML">
+          <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+        <button type="submit">Submit</button>
+
+        <script>
+          document.addEventListener("click", (evt) => {
+            async function doRequest(){
+              let url = 'https://httpbin.org/post';
+              let data = {'question': 'How satisfied are you?', 'rating': evt.target.getAttribute("n"), 'X-Sent-By': 'JavaScript'};
+
+              let res = await fetch(url, {
+                  method: 'POST',
+                  headers:{
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+              });
+
+              if(res.ok){
+                  let ret = await res.json();
+                  return JSON.parse(ret.data);
+              }
+              else{
+                  return 'HTTP error: ${res.status}';
+              }
+            }
+
+            if(evt.target.getAttribute("n") == 4 || evt.target.getAttribute("n") == 5){
+              clicked.innerHTML="Thanks for "+evt.target.getAttribute("n")+" star rating!";
+            
+              doRequest().then(data => {
+                  console.log(data);
+              });
+            }
+
+            else if(evt.target.getAttribute("n") == 1 || evt.target.getAttribute("n") == 2 || evt.target.getAttribute("n") == 3){
+              clicked.innerHTML="Thanks for your feedback of "+evt.target.getAttribute("n")+" stars.  We'll try to do better!";
+
+              doRequest().then(data => {
+                  console.log(data);
+              });
+            }
+          });
+        </script>
+
+        <script type="text/javascript" src="star.js"></script>
+        </form>
+      </rating-widget>
     </main>
+    
+    <h1 id=clicked></h1>
 
     <footer>
       <hr />
