@@ -272,8 +272,36 @@
           const temp_unit = day["temperatureUnit"];
           const wind_dir = day["windDirection"];
           const wind_speed = day["windSpeed"];
+          const humidity = day["relativeHumidity"];
+          const humid_value = humidity["value"];
 
-          weather.innerHTML = "hello";
+          if(forecast == "Patchy Fog"){
+            weather.innerHTML = "<img src=images/patchy_fog.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else if(forecast == "Mostly Sunny"){
+            weather.innerHTML = "<img src=images/mostly_sunny.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else if(forecast == "Mostly Cloudy"){
+            weather.innerHTML = "<img src=images/mostly_cloudy.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else if(forecast == "Mostly Clear"){
+            weather.innerHTML = "<img src=images/mostly_clear.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else if(forecast == "Sunny"){
+            weather.innerHTML = "<img src=images/sunny.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else if(forecast == "Party Cloudy"){
+            weather.innerHTML = "<img src=images/partly_cloudy.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
+
+          else{
+            weather.innerHTML = "<img src=images/sunny.png>" + forecast + " " + temperature + "°" + temp_unit + ", " + humid_value + "% humidity, " + "Winds blowing " + wind_speed + " " + wind_dir;
+          }
         }
 
         window.onload = getWeather;
